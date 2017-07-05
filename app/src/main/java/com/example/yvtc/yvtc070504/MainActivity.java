@@ -16,4 +16,17 @@ public class MainActivity extends AppCompatActivity {
         wv.getSettings().setJavaScriptEnabled(true);
         wv.loadUrl("file:///android_asset/index.html");
     }
+
+    @Override
+    public void onBackPressed() {
+
+        if (!wv.getUrl().contains("index.html"))
+        {
+            wv.goBack();
+        }
+        else
+        {
+            super.onBackPressed();
+        }
+    }
 }
